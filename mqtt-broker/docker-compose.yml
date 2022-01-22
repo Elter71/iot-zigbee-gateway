@@ -1,0 +1,10 @@
+version: '2'
+services:
+  mqtt-broker:
+    container_name: mqtt-broker
+    image: emqx/emqx:4.3.11
+    restart: always
+    network_mode: host
+    ports:
+      - "18083:18083"
+      - "1883:1883"
