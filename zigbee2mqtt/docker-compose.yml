@@ -1,0 +1,17 @@
+version: '2'
+services:
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt:1.22.2
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=Europe/Warsaw
+    volumes:
+      - /Volumes/zigbee2mqtt:/app/data
+      - /run/udev:/run/udev:ro
+    ports:
+      - "8080:8080"
+    devices:
+      # Make sure this matched your adapter location
+      - /dev/ttyACM0:/dev/ttyACM0
