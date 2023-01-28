@@ -2,7 +2,7 @@ version: '2'
 services:
   mqtt-broker:
     container_name: mqtt-broker
-    image: emqx/emqx:4.3.11
+    image: emqx/emqx:5.0.15
     restart: unless-stopped
     network_mode: host
     ports:
